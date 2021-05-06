@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/359738fa93.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container container-def">
+      <form id="search-form">
+        <div class="row">
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter city"
+              id="city-input"
+            />
+          </div>
+          <div class="col-1">
+            <input type="submit" class="btn button" value="GO" id="search-button"/>
+          </div>
+          <div class="col-1">
+            <button class="btn button" id="location-button"><i class="fas fa-map-marked-alt"></i></button>
+          </div>
+      </form>
+
+      <h1></h1>
+
+      <div class="row">
+        <div class="col-3 text-start">
+          <i class="fas fa-sun icon-sun"></i>
+        </div>
+
+        <div class="col-3">
+          <div class="row">
+            <div class="col text-center">Currently</div>
+          </div>
+          <div class="row">
+            <div class="col text-center chosen-temp">
+              <span id="current-temp"></span>
+              °C 
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="row">
+            <div class="col text-center" id="current-time"></div>
+          </div>
+          <div class="row">
+            <div class="col text-center chosen-weather" id="current-weather"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row mt-3 frame">
+        <div class="col-4 text-start">Feels like: <span id="feels-like-temp"></span>°C</div>
+        <div class="col-4 text-center">Humidity: <span id="current-humidity"></span>%</div>
+        <div class="col-4 text-end">Wind: <span id="current-wind"></span> km/h</div>
+      </div>
+
+      <div class="row row-cols-SM-5 mt-5">
+        <div class="col">
+          <div class="card forecast chosen-forecast">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fas fa-sun warm-forecast"></i>
+              </p>
+              <p class="card-text">
+                <span id="forecast-day-one">Thursday</span>
+                <br />
+                <span class="high-temp" id="forecast-day-one-high-temp">31°C</span>
+                <span class="low-temp" id="forecast-day-one-low-temp"> 25°C</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card forecast">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fas fa-bolt cold-forecast"></i>
+              </p>
+              <p class="card-text">
+                Friday
+                <br />
+                <span class="high-temp">34°C</span>
+                <span class="low-temp"> 26°C</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card forecast">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fas fa-cloud-showers-heavy cold-forecast"></i>
+              </p>
+              <p class="card-text">
+                Saturday
+                <br />
+                <span class="high-temp">35°C</span>
+                <span class="low-temp"> 27°C</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card forecast">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fas fa-cloud-sun warm-forecast"></i>
+              </p>
+              <p class="card-text">
+                Sunday
+                <br />
+                <span class="high-temp">35°C</span>
+                <span class="low-temp"> 25°C</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card forecast">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fas fa-cloud-sun-rain warm-forecast"></i>
+              </p>
+              <p class="card-text">
+                Monday
+                <br />
+                <span class="high-temp">36°C</span>
+                <span class="low-temp"> 27°C</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="footer">Coded by Nina Drescher</p>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
